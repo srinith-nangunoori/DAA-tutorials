@@ -8,8 +8,10 @@ vector<pair<int,int>> points;
 vector<pair<int,int>> ans;
 
 double perpendicularDistance(pair<int,int>& left, pair<int,int>& right, pair<int,int>& p, char dir) {
-    bool valid = (dir == 'U') ? (p.second > left.second || p.second > right.second)
-                              : (p.second < left.second || p.second < right.second);
+    long long orient = (right.first - left.first) * (p.second - left.second)
+                     - (right.second - left.second) * (p.first - left.first);// this is the 2-D cross product check for point position wrt line
+
+    bool valid = (dir == 'U') ? (orient > 0) : (orient < 0);
     if (!valid) return 0;
 
     double num = fabs((right.second - left.second) * p.first 
