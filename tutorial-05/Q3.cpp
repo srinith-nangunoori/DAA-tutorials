@@ -68,7 +68,7 @@ int main(){
 
 //              {   0           ,if sub string 0,j is palindrome
 //    dp[j] =   |
-//              {  min(dp[i] + 1 ) (for all i  0->j)   ,if i,j is a palindrome
+//              {  min(dp[i] + 1 ) (for all i  0->j)   ,if i,j is not a palindrome
 
 // this is done in O(n^2) , 1D DP
 
